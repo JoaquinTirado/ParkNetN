@@ -1,0 +1,7 @@
+{
+    "require": {
+        "firebase/php-jwt": "^5.0",
+        "php":"^7.0",
+        "pkpass/pkpass": "^1.0.0"
+    }
+}

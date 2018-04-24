@@ -1,0 +1,127 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "intl-tel-input",
+        "scope": null,
+        "escapedName": "intl-tel-input",
+        "name": "intl-tel-input",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/Luis/Documents/Work/ParkNet"
+    ]
+  ],
+  "_from": "intl-tel-input@latest",
+  "_id": "intl-tel-input@12.1.11",
+  "_inCache": true,
+  "_location": "/intl-tel-input",
+  "_nodeVersion": "8.9.4",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/intl-tel-input_12.1.11_1520775140810_0.23483293051340115"
+  },
+  "_npmUser": {
+    "name": "jackocnr",
+    "email": "jackocnr@gmail.com"
+  },
+  "_npmVersion": "5.6.0",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "intl-tel-input",
+    "scope": null,
+    "escapedName": "intl-tel-input",
+    "name": "intl-tel-input",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/intl-tel-input/-/intl-tel-input-12.1.11.tgz",
+  "_shasum": "2a4c04d0fd3d085414ca2b8f3a08fcdf4a0dc1e2",
+  "_shrinkwrap": null,
+  "_spec": "intl-tel-input",
+  "_where": "/Users/Luis/Documents/Work/ParkNet",
+  "author": {
+    "name": "Jack O'Connor",
+    "url": "http://jackocnr.com"
+  },
+  "bugs": {
+    "url": "https://github.com/jackocnr/intl-tel-input/issues"
+  },
+  "dependencies": {},
+  "description": "A jQuery plugin for entering international telephone numbers",
+  "devDependencies": {
+    "evenizer": "^0.1.17",
+    "grunt": "^1.0.1",
+    "grunt-bump": "^0.8.0",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-imagemin": "^1.0.1",
+    "grunt-contrib-jasmine": "^1.1.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-uglify": "^2.1.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-exec": "^1.0.1",
+    "grunt-replace": "^1.0.1",
+    "grunt-responsive-images": "^1.10.1",
+    "grunt-sass": "^2.0.0",
+    "grunt-shell": "^2.1.0",
+    "grunt-spritesmith": "^6.4.0",
+    "grunt-template": "^1.0.0",
+    "jasmine-jquery": "^2.1.1",
+    "jquery": "^3.1.1",
+    "load-grunt-config": "^0.19.2",
+    "region-flags": "^1.0.1",
+    "time-grunt": "^1.4.0"
+  },
+  "directories": {},
+  "dist": {
+    "integrity": "sha512-V1DMUhbpBydQKvJ5sd2EyLkhIrV53Lv0FK3lvjc8wtBUg6XmiAD7bNR6buwp1sAZY9Lal+AFsb0gjOG8rVBp7A==",
+    "shasum": "2a4c04d0fd3d085414ca2b8f3a08fcdf4a0dc1e2",
+    "tarball": "https://registry.npmjs.org/intl-tel-input/-/intl-tel-input-12.1.11.tgz",
+    "fileCount": 105,
+    "unpackedSize": 927860
+  },
+  "gitHead": "725b3b668ce396e15b8f607daf883b5c6e800780",
+  "homepage": "https://github.com/jackocnr/intl-tel-input#readme",
+  "keywords": [
+    "international",
+    "i18n",
+    "country",
+    "dial",
+    "code",
+    "telephone",
+    "mobile",
+    "input",
+    "flag"
+  ],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "jackocnr",
+      "email": "jackocnr@gmail.com"
+    }
+  ],
+  "name": "intl-tel-input",
+  "optionalDependencies": {},
+  "peerDependencies": {
+    "jquery": ">=1.7"
+  },
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackocnr/intl-tel-input.git"
+  },
+  "scripts": {
+    "build": "grunt build",
+    "build:css": "grunt css",
+    "build:img": "grunt img",
+    "build:js": "grunt js",
+    "test": "grunt travis",
+    "watch": "grunt watch"
+  },
+  "version": "12.1.11"
+}
