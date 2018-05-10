@@ -20,3 +20,5 @@ $new_user_username = $result['User']['Username'];
 $new_user_sub      = $result['User']['Attributes'][0]['Value'];
 $new_user_phone    = $result['User']['Attributes'][3]['Value'];
 $new_user_email    = $result['User']['Attributes'][4]['Value'];
+
+

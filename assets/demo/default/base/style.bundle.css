@@ -10365,8 +10365,8 @@ b, strong {
         position: relative; }
     .m-datatable.m-datatable--default.m-datatable--scroll > .m-datatable__table > .m-datatable__body {
       overflow: hidden; }
-  .m-datatable.m-datatable--default > .m-datatable__pager {
-    margin-top: 20px; }
+  .m-datatable.m-datatable--default > .m-datatable__pager { 
+    margin-bottom: 20px; }
     .m-datatable.m-datatable--default > .m-datatable__pager.m-datatable__pager--top {
       margin-bottom: 20px; }
     .m-datatable.m-datatable--default > .m-datatable__pager > .m-datatable__pager-nav {

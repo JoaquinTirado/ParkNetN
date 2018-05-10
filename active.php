@@ -60,8 +60,11 @@
 										</div>
 										<!--end: Search Form -->
 										<!--begin: Datatable -->
+										<button onclick = "Change()">Change Color</button>
 										<div class="m_datatable" id="ajax_data"></div>
 										<div class="m_datatable_csv hidden"></div>
+										<!--Data table style: -->
+
 										<!--end: Datatable -->
 									</div>
 								</div>
@@ -84,6 +87,35 @@
 		<input type="hidden" id="pageid" value="active">
 		<!-- end::Scroll Top -->
     	<?php include 'components/foot-scripts.php' ?>
+
+
+
+<script type="text/javascript">
+
+var Random = setInterval(Swap, 110);
+
+function Swap() {
+    
+    $("[class='m-datatable__pager m-datatable--paging-loaded clearfix']").each(function () {
+        $(this).insertBefore($(this).prev("[class='m-datatable__table']"));
+    });
+
+}
+
+function Change() {
+$("h3").css("color", "red");
+$("[class='m-datatable__row']").css("background-color", "red");
+$("div.myclass").hover(function() {
+  $(this).css("background-color","blue")
+});
+}
+
+
+</script>
+
+
+
+
 	</body>
 	<!-- end::Body -->
 </html>

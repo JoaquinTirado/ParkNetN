@@ -4,7 +4,7 @@ var DatatableRemoteAjaxDemo = function() {
   //== Private functions
 
   var activeKeysTable = function() {
-
+//FLAG
     var datatable = $('.m_datatable').mDatatable({
       // datasource definition
       data: {
@@ -13,7 +13,7 @@ var DatatableRemoteAjaxDemo = function() {
           read: {
             // sample GET method
             method: 'GET',
-            // url: 'https://keenthemes.com/metronic/preview/inc/api/datatables/demos/default.php',
+            //url: 'https://keenthemes.com/metronic/preview/inc/api/datatables/demos/default.php',
             url: '../../../controllers/datatable-handler.php',
             map: function(raw) {
               // sample data mapping
@@ -350,6 +350,9 @@ jQuery(document).ready(function() {
   setTimeout(function() {
     sortTable(0);
   }, 2000);
+
+
+
 
 });
 
@@ -692,3 +695,9 @@ function makeAdmin(userid) {
         console.log("You pressed no.");
     }
 }
+
+
+
+
+
+//

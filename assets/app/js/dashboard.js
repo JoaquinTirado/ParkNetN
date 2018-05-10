@@ -138,8 +138,25 @@ jQuery(document).ready(function() {
       // on blur: validate
       telInput.blur(function() {
         reset();
+        //Send data to php file in order to confirm
+        //that there are no phone duplicates
+        $.post('../../../CHANGE.php', {
+          postData : telInput.val()
+        }, function(data, status){
+
+          //document.write(data); <- used for debugging
+          if(data == 'taken'){
+          $('#new-user-phone').val('');
+          validMsg.text('Phone number in use');
+          validMsg.css('color', '#ed145b');
+          validMsg.removeClass("hidden"); 
+          }
+        });
+
         if ($.trim(telInput.val())) {
           if (telInput.intlTelInput("isValidNumber")) {
+            validMsg.text('✓ Valid');
+            validMsg.css('color', '#24e370');
             validMsg.removeClass("hidden");
           } else {
             telInput.addClass("error");
@@ -150,5 +167,87 @@ jQuery(document).ready(function() {
   
       // on keyup / change flag: reset
       telInput.on("keyup change", reset);
+
+      //Initialize the variables for user input and error msg
+      var usrInput = $("#new-user-username"),
+          usrErrorMsg = $("#new-user-error-message");
+
+      //Clean up old error msg:
+      var resetUsrErrorMsg = function(){
+        usrErrorMsg.addClass("hidden");
+      }    
+
+      //When the user clicks away (out of focus), check his input 
+      usrInput.blur(function(){
+        resetUsrErrorMsg();
+
+        //Check if the user actually type in something
+        if (usrInput.val().length == 0 ){
+          usrInput.val('');
+          usrErrorMsg.text('Null not accepted, please type something');
+          usrErrorMsg.css('color', '#ed145b');
+          usrErrorMsg.removeClass("hidden");
+        }
+        //Check if the password is at least 8 chars in length
+        else if (usrInput.val().length < 8 ) {
+          usrInput.val('');
+          usrErrorMsg.text('Password must be at least 8 characters');
+          usrErrorMsg.css('color', '#ed145b');
+          usrErrorMsg.removeClass("hidden");       
+        }
+        //check if there is whitespace in the string
+        else if (usrInput.val().indexOf(' ') !== -1) {
+          usrInput.val('');
+          usrErrorMsg.text('No whitespace allowed');
+          usrErrorMsg.css('color', '#ed145b');
+          usrErrorMsg.removeClass("hidden");   
+        }
+        //If everything is right, greet the user with friendly msg:
+        else {
+          usrErrorMsg.text('Fits rules');
+          usrErrorMsg.css('color', '#24e370');
+          usrErrorMsg.removeClass("hidden");  
+        }
+        
+
+
+      });
+      //Initialize email variables 
+      var usrEmail = $('#new-user-email'),
+          usrEmailErrMsg = $('#new-user-email-error');
+
+    //Function that wipes email error mesages
+      function resetUsrEmailErr(){
+        usrEmailErrMsg.addClass('hidden');
+      }
+
+
+      usrEmail.blur(function(){
+        resetUsrEmailErr();
+        //Verify that there are no email duplicates
+        $.post('../../../CHANGE.php', {
+          postData : usrEmail.val()
+        }, function(data, status){
+
+          //document.write(data); <- used for debugging
+          if(data == 'taken'){
+          usrEmail.val('');
+          usrEmailErrMsg.text('Email in use');
+          usrEmailErrMsg.css('color', '#ed145b');
+          usrEmailErrMsg.removeClass("hidden"); 
+          }
+          else{
+          usrEmailErrMsg.text('Unique');
+          usrEmailErrMsg.css('color', '#24e370');
+          usrEmailErrMsg.removeClass("hidden"); 
+          }
+        });
+
+
+
+
+      });
+
+
     }
 });

@@ -43,6 +43,10 @@
 											<span class="m-form__help">
 												Please enter a unique username with no spaces. Eg: ExampleUser
 											</span>
+											<!--NEW Stuff-->
+											</br>
+											<span id = "new-user-error-message" class = "hidden">Error reasonnnnnn</span>
+											<!--END of new stuff -->
 										</div>
 
 										<div class="form-group m-form__group">
@@ -51,8 +55,8 @@
 											</label>
 											<br>
 												<input id="new-user-phone" type="tel" class="form-control m-input" placeholder="Phone Number">
-												<span id="valid-msg" class="hidden">✓ Valid</span>
 												<span id="error-msg" class="hidden">Invalid number</span>
+												<span id="valid-msg" class="hidden">✓ Valid</span>
 											<br>
 											<span class="m-form__help">
 												Please enter the phone number with the following format [area code][phone number]. Eg: 7875554444
@@ -64,16 +68,20 @@
 												Email Address:
 											</label>
 											<div class="m-input-icon m-input-icon--left">
-												<input id="new-user-email" type="email" class="form-control m-input" placeholder="Email Address">
+												<input id="new-user-email" type="email" class="form-control m-input" placeholder="Email Address"> 
+
 												<span class="m-input-icon__icon m-input-icon__icon--left">
 													<span>
 														<i class="la la-bell"></i>
 													</span>
 												</span>
+
+												
 											</div>
 											<span class="m-form__help">
 												Please enter a valid email address. Eg: email@example.com
 											</span>
+											<span id = "new-user-email-error" class = "hidden"></span>
 										</div>
 
 									</div>
