@@ -35,7 +35,7 @@ if(isset($_GET['keyId'])) {
             $zone_name = "Co.Co.Haus";
             $locations = '{"latitude" : 18.444669, "longitude" : -66.065777}';
           } else if ($key["zoneId"] == "test_1"){
-            $zone_name = "Inteldot";
+            $zone_name = "Test Zone";
             $locations = '{"latitude" : 18.448005, "longitude" : -66.070752}';
           }  else if ($key["zoneId"] == "vitech_1"){
             $zone_name = "Vitech";
@@ -44,8 +44,8 @@ if(isset($_GET['keyId'])) {
             $zone_name = "Inteldot";
             $locations = '{"latitude" : 18.448005, "longitude" : -66.070752}';
           } else {
-						$zone_name = "Inteldot";
-            $locations = '{"latitude" : 18.448005, "longitude" : -66.070752}';
+						$zone_name = "Unknown Zone";
+            $locations = '';
           }
 
           //Key Type
@@ -95,43 +95,105 @@ if(isset($_GET['keyId'])) {
         exit('An error occurred: ' . $error);
     }
 
+
+
     // Set pass data
-    $pass->setData('{
-	"passTypeIdentifier": "pass.com.parknet",
-	"formatVersion": 1,
-	"organizationName": "Parknet",
-	"serialNumber": "' . $keyId . '",
-	"teamIdentifier": "9L5685F945",
-	"sharingProhibited": true,
-	"backgroundColor": "rgb(14,158,124)",
-	"logoText": "Parknet Pass",
-	"description": "Parknet Pass",
-	"storeCard": {
-        "primaryFields": [
-            {
-            	"key" : "zone",
-            	"label" : "' . $key_type . '",
-            	"value" : "' . $zone_name . '",
-              "textAlignment" : "PKTextAlignmentCenter"
-            }
-        ],
-        "secondaryFields": ['.$secondaryFields.'],
-        "backFields": [
-            {
-                "key": "recipient-name",
-                "label": "Recipient",
-                "value": "' . $recipient . '"
-            }
-        ],
-        "transitType" : "PKTransitTypeAir"
-    },
-    "barcode": {
-        "format": "PKBarcodeFormatQR",
-        "message": "' . $keyId . '",
-        "messageEncoding": "iso-8859-1"
-    },
-    "locations" : [ '.$locations.' ],
-    }');
+
+		if($key["zoneId"] == "inteldot_1"){
+			$pass->setData('{
+		"passTypeIdentifier": "pass.com.parknet",
+		"formatVersion": 1,
+		"organizationName": "Parknet",
+		"serialNumber": "' . $keyId . '",
+		"teamIdentifier": "9L5685F945",
+		"sharingProhibited": true,
+		"backgroundColor": "rgb(14,158,124)",
+		"logoText": "Parknet Pass",
+		"description": "Parknet Pass",
+		"storeCard": {
+	        "primaryFields": [
+	            {
+	            	"key" : "zone",
+	            	"label" : "' . $key_type . '",
+	            	"value" : "' . $zone_name . '",
+	              "textAlignment" : "PKTextAlignmentCenter"
+	            }
+	        ],
+	        "secondaryFields": ['.$secondaryFields.'],
+	        "backFields": [
+	            {
+	                "key": "recipient-name",
+	                "label": "Recipient",
+	                "value": "' . $recipient . '"
+	            },
+							{
+	                "key": "address",
+	                "label": "Address",
+	                "value": "#1413 Ave. Ponce de León | Suite 301 | San Juan, PR"
+	            },
+							{
+	                "key": "map",
+	                "label": "Map",
+	                "value": "https://goo.gl/maps/G1ggq4sRXak"
+	            },
+							{
+	                "key": "powered",
+	                "label": "Powered by Parknet LLC",
+	                "value": "Contact us at:(787) 568-8341 | hello@parknet.pr"
+	            }
+	        ],
+	        "transitType" : "PKTransitTypeAir"
+	    },
+	    "barcode": {
+	        "format": "PKBarcodeFormatQR",
+	        "message": "' . $keyId . '",
+	        "messageEncoding": "iso-8859-1"
+	    },
+	    "locations" : [ '.$locations.' ],
+	    }');
+		}
+		else{
+			$pass->setData('{
+		"passTypeIdentifier": "pass.com.parknet",
+		"formatVersion": 1,
+		"organizationName": "Parknet",
+		"serialNumber": "' . $keyId . '",
+		"teamIdentifier": "9L5685F945",
+		"sharingProhibited": true,
+		"backgroundColor": "rgb(14,158,124)",
+		"logoText": "Parknet Pass",
+		"description": "Parknet Pass",
+		"storeCard": {
+	        "primaryFields": [
+	            {
+	            	"key" : "zone",
+	            	"label" : "' . $key_type . '",
+	            	"value" : "' . $zone_name . '",
+	              "textAlignment" : "PKTextAlignmentCenter"
+	            }
+	        ],
+	        "secondaryFields": ['.$secondaryFields.'],
+	        "backFields": [
+	            {
+	                "key": "recipient-name",
+	                "label": "Recipient",
+	                "value": "' . $recipient . '"
+	            }
+	        ],
+	        "transitType" : "PKTransitTypeAir"
+	    },
+	    "barcode": {
+	        "format": "PKBarcodeFormatQR",
+	        "message": "' . $keyId . '",
+	        "messageEncoding": "iso-8859-1"
+	    },
+	    "locations" : [ '.$locations.' ],
+	    }');
+		}
+
+
+
+
     if($pass->checkError($error) == true) {
         exit('An error occured: ' . $error);
     }
