@@ -5,16 +5,8 @@ use PKPass\PKPass;
 require('../assets/vendors/PKPass/PKPass.php');
 
 if(isset($_GET['keyId'])) {
-    //Users table
-		$tableName = 'zones_Keys';
-		// //Capture variables
 
-    //Always Active Key Example
-    // $keyId = "ec5972bb-30be-470e-8854-95084e0e0f61";
-    //Working Hours Key Example
-    // $keyId = "ba8d3cdc-e14f-4453-9217-c04b2d369cce";
-    //By Period Key Example
-    // $keyId = "7a724f0b-48c6-46ed-86b8-89f07c10e1cc";
+		$tableName = 'zones_Keys';
 
     $keyId = $_GET['keyId'];
 
@@ -37,7 +29,7 @@ if(isset($_GET['keyId'])) {
           $key = $marshaler->unmarshalItem($result["Item"]);
           //Zone Name
           if ($key["zoneId"] == "parallel18_1"){
-            $zone_name = "Parallel18";
+            $zone_name = "Parallel 18";
             $locations = '{"latitude" : 18.450112, "longitude" : -66.073820}';
           } else if ($key["zoneId"] == "cocohaus_1"){
             $zone_name = "Co.Co.Haus";
@@ -96,9 +88,6 @@ if(isset($_GET['keyId'])) {
 		    echo $e->getMessage() . "\n";
 		}
 
-    // Create pass
-
-    //Set certificate and path in the constructor
     $pass = new PKPass('../assets/vendors/PKPass/Certificate/Certificates.p12', 'P@rknetP@ss!');
 
     //Check if an error occurred within the constructor
@@ -155,8 +144,7 @@ if(isset($_GET['keyId'])) {
     if($pass->checkError($error) == true) {
         exit('An error occured: ' . $error);
     }
-    // Create and output the PKPass
-    // If you pass true, the class will output the zip into the browser.
+
     $result = $pass->create(true);
     if($result == false) {
         echo $pass->getError();
