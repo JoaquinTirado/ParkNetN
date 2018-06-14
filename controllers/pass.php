@@ -43,8 +43,8 @@ if(isset($_GET['keyId'])) {
             $zone_name = "Co.Co.Haus";
             $locations = '{"latitude" : 18.444669, "longitude" : -66.065777}';
           } else if ($key["zoneId"] == "test_1"){
-            $zone_name = "Test Zone";
-            $locations = '{"latitude" : 18.450112, "longitude" : -66.073820}';
+            $zone_name = "Inteldot";
+            $locations = '{"latitude" : 18.448005, "longitude" : -66.070752}';
           }  else if ($key["zoneId"] == "vitech_1"){
             $zone_name = "Vitech";
             $locations = '{"latitude" : 18.207144, "longitude" : -67.128187}';
@@ -52,8 +52,8 @@ if(isset($_GET['keyId'])) {
             $zone_name = "Inteldot";
             $locations = '{"latitude" : 18.448005, "longitude" : -66.070752}';
           } else {
-            $zone_name = "Unknown Zone";
-            $locations = '';
+						$zone_name = "Inteldot";
+            $locations = '{"latitude" : 18.448005, "longitude" : -66.070752}';
           }
 
           //Key Type
