@@ -43,6 +43,8 @@ if ($action == 'deactivate') {
       		include '../controllers/deleteKey-test.php';
       	} else if ($_SESSION['allowedZones'] == 'vitech_1') {
       		include '../controllers/deleteKey-vitech.php';
+      	} else if ($_SESSION['allowedZones'] == 'inteldot_1') {
+      		include '../controllers/deleteKey-inteldot.php';
       	}
 
     } catch (DynamoDbException $e) {

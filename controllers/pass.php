@@ -48,6 +48,9 @@ if(isset($_GET['keyId'])) {
           }  else if ($key["zoneId"] == "vitech_1"){
             $zone_name = "Vitech";
             $locations = '{"latitude" : 18.207144, "longitude" : -67.128187}';
+          } else if ($key["zoneId"] == "inteldot_1"){
+            $zone_name = "Inteldot";
+            $locations = '{"latitude" : 18.448005, "longitude" : -66.070752}';
           } else {
             $zone_name = "Unknown Zone";
             $locations = '';
