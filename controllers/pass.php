@@ -37,7 +37,7 @@ if(isset($_GET['keyId'])) {
           $key = $marshaler->unmarshalItem($result["Item"]);
           //Zone Name
           if ($key["zoneId"] == "parallel18_1"){
-            $zone_name = "Parallel 18";
+            $zone_name = "Parallel18";
             $locations = '{"latitude" : 18.450112, "longitude" : -66.073820}';
           } else if ($key["zoneId"] == "cocohaus_1"){
             $zone_name = "Co.Co.Haus";
