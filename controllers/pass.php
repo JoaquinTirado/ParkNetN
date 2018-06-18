@@ -139,7 +139,7 @@ if(isset($_GET['keyId'])) {
 							{
 	                "key": "powered",
 	                "label": "Powered by Parknet LLC",
-	                "value": "Contact us at:(787) 568-8341 | hello@parknet.pr"
+	                "value": "Contact us at: (787) 568-8341 | hello@parknet.pr"
 	            }
 	        ],
 	        "transitType" : "PKTransitTypeAir"
